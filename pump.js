@@ -226,7 +226,6 @@ function market_buy(percent) {
       getCorrectQuantity(fullQuantity * 0.6),
       (error, response) => {
         if (error) {
-          console.error(error.body ? error.body : error)
           console.log(chalk.red('BUY FAILED'))
           return
         }
@@ -245,7 +244,6 @@ function market_buy(percent) {
       getCorrectQuantity(fullQuantity * 0.11),
       (error, response) => {
         if (error) {
-          console.error(error.body ? error.body : error)
           console.log(chalk.red('BUY FAILED'))
           return
         }
@@ -262,7 +260,6 @@ function market_buy(percent) {
       getCorrectQuantity(fullQuantity * 0.11),
       (error, response) => {
         if (error) {
-          console.error(error.body ? error.body : error)
           console.log(chalk.red('BUY FAILED'))
           return
         }
@@ -279,8 +276,8 @@ function market_buy(percent) {
       getCorrectQuantity(fullQuantity * 0.11),
       (error, response) => {
         if (error) {
-          console.error(error.body ? error.body : error)
           console.log(chalk.red('BUY FAILED'))
+          console.log("")
           return
         }
         console.info(
@@ -466,11 +463,18 @@ function start() {
     }
 
     exchangeInfo = data.symbols
-    console.log(chalk.yellow.inverse('BINANCE PRO'))
+    console.log("")
+    console.log("")
+    console.log("")
+    console.log(chalk.yellow.inverse('BINANCE PRO BINANCE PRO BINANCE PRO'))
     console.log("")
     console.log(chalk.bgRed('PLEASE DOUBLE CHECK YOUR CONFIG BEFORE STARTING!'))
+    console.log(chalk.bgRed('PLEASE DOUBLE CHECK YOUR CONFIG BEFORE STARTING!'))
+    console.log(chalk.bgRed('PLEASE DOUBLE CHECK YOUR CONFIG BEFORE STARTING!'))
     console.log("")
-    console.log(chalk.magenta.bold('INPUT FIRST COIN OF TRADE PAIR TO CONTINUE'))
+    console.log("")
+    console.log("")
+    console.log(chalk.magenta.bold('COIN THAT WILL PUMP:'))
 
     var rl = readline.createInterface({
       input: process.stdin,
@@ -518,11 +522,10 @@ function start() {
           )
         console.log(
           chalk.magenta.bold(
-            '\n1 - SELL ALL\n2 - SELL HALF\n3 - SELL QUARTER\n4 - SELL 10%\n5 - BUY ALL\n6 - BUY HALF\n7 - BUY QUARTER\no - Show Browser Trading Link\n0 - Toggle Manual(no take profits or stop losses)\n(Enter Disabled)'
+            '\n1 - SELL ALL\n2 - SELL HALF\n3 - SELL QUARTER\n4 - SELL 10%\n5 - BUY ALL\n6 - BUY HALF\n7 - BUY QUARTER\no - Show Browser Trading Link\n0 - Toggle Manual(no take profits or stop losses)'
           )
         )
-        console.log(")
-        )
+        console.log("")
         
         rl.close()
 
