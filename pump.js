@@ -627,7 +627,7 @@ function start() {
             }
           }
           if (key === 'o') {
-            console.log(chalk.magentaBright('https://www.binance.com/cn/trade/${TRADE_OUT}_${TRADE_IN}?layout=pro'))
+            console.log(`https://www.binance.com/cn/trade/${TRADE_OUT}_${TRADE_IN}?layout=pro`)
           }
           // ctrl-c EXIT
           if (key === '\u0003') {
