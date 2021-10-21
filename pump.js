@@ -1,5 +1,6 @@
 const isWin = process.platform === 'win32'
 
+
 const chalk = require('chalk')
 const readline = require('readline')
 const Binance = require('node-binance-api')
