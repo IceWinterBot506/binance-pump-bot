@@ -520,7 +520,8 @@ function start() {
           chalk.magenta.bold(
             '\n1 - SELL ALL\n2 - SELL HALF\n3 - SELL QUARTER\n4 - SELL 10%\n5 - BUY ALL\n6 - BUY HALF\n7 - BUY QUARTER\no - Show Browser Trading Link\n0 - Toggle Manual(no take profits or stop losses)\n(Enter Disabled)'
           )
-        console.log("))
+        )
+        console.log(")
         )
         
         rl.close()
