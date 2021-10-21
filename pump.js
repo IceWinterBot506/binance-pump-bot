@@ -1,15 +1,5 @@
 const isWin = process.platform === 'win32'
 
-/**
- * Proxy, uncomment for proxy usage
- */
-// if (isWin) {
-//   process.env.socks_proxy = 'socks5h://127.0.0.1:1084'
-// } else {
-//   process.env.socks_proxy = 'socks5h://127.0.0.1:1086'
-// }
-
-// Imports
 const chalk = require('chalk')
 const readline = require('readline')
 const Binance = require('node-binance-api')
@@ -141,22 +131,6 @@ function calculateTimesAndTriggerOrders() {
         market_sell()
       }
 
-      // if (
-      //   SOFT_TAKE_PROFIT &&
-      //   SOFT_TAKE_PROFIT.length > 0 &&
-      //   SOFT_TAKE_PROFIT[softTakeProfitIndex]
-      // ) {
-      //   if (times > SOFT_TAKE_PROFIT[softTakeProfitIndex]) {
-      //     console.log(
-      //       '\nTRIGGER SOFT TAKE PROFIT ' +
-      //         SOFT_TAKE_PROFIT[softTakeProfitIndex] +
-      //         'x'
-      //     )
-      //     market_sell((1 / SOFT_TAKE_PROFIT.length) * SOFT_TAKE_PROFIT_PERCENT)
-      //     softTakeProfitIndex += 1
-      //   }
-      // }
-
       if (times > PEAK_TAKE_PROFIT_THRESHOLD) {
         try {
           console.log(
@@ -233,16 +207,6 @@ function tickPriceHttp() {
 
 function tickPriceWS() {
   if (symbol) {
-    // binance.websockets.miniTicker(symbol, (error, response) => {
-    //   if (error) {
-    //     console.error(error)
-    //     return
-    //   }
-    //   // console.info('TICKER RESPONSE')
-    //   // console.log(response)
-    //   console.log(typeof response, response)
-    //   price = response.close
-    // })
     binance.websockets.prevDay(symbol, (error, response) => {
       if (error) {
         try {
@@ -299,7 +263,6 @@ function market_buy(percent) {
         console.info(
           chalk.bgGreen(`Market Buy ${percent * 100 * 0.11}% SUCCESS`)
         )
-        // Now you can limit sell with a stop loss, etc.
         if (price) {
           snapshot_buy_price = (' ' + price).slice(1)
         }
@@ -392,8 +355,6 @@ function resetStatistics() {
       console.error(err)
     }
   }
-  // drawbackStarted = false
-  // softTakeProfitIndex = 0
 }
 
 function getCorrectQuantity(quantity) {
@@ -442,11 +403,6 @@ function getBalance(init = false, cb) {
   binance.balance((error, balances) => {
     if (error) return console.error(error)
     let newBalance = balances
-    // Object.entries(balances)
-    //   .filter((arr) => parseFloat(arr[1].available) > 0)
-    //   .forEach((arr) => {
-    //     newBalance[arr[0]] = arr[1]
-    //   })
 
     if (init) {
       if (newBalance[TRADE_IN]) {
@@ -512,17 +468,11 @@ function getBalance(init = false, cb) {
     if (cb) {
       cb(newBalance)
     }
-
-    // test
-    // balance[TRADE_IN] = { available: 100, onOrder: 0 }
-    // balance[TRADE_OUT] = { available: 100, onOrder: 0 }
   })
 }
 Binance_Web = "https://www.binance.com/en/trade/"
 Binance_Pro = "?layout=pro"
 function start() {
-  //minQty = minimum order quantity
-  //minNotional = minimum order value (price * quantity)
   binance.exchangeInfo(function (error, data) {
     if (error) {
       console.log(chalk.red(`GET exchangeInfo failed, exiting...`))
@@ -575,25 +525,16 @@ function start() {
 
         console.log(
           chalk.magenta(
-            '\nNOW, TYPE\n1 - SELL ALL\n2 - SELL HALF\n3 - SELL QUARTER\n4 - SELL 10%\n5 - BUY ALL\n6 - BUY HALF\n7 - BUY QUARTER\no - Open browser with the Trading Pair\n0 - Toggle Manual(no take profits or stop losses)\n(Enter not needed)'
+            '\nNOW, TYPE\n1 - SELL ALL\n2 - SELL HALF\n3 - SELL QUARTER\n4 - SELL 10%\n5 - BUY ALL\n6 - BUY HALF\n7 - BUY QUARTER\no - Show Browser Trading Link\n0 - Toggle Manual(no take profits or stop losses)\n(Enter not needed)'
           )
         )
 
         rl.close()
 
         var stdin = process.stdin
-
-        // without this, we would only get streams once enter is pressed
         stdin.setRawMode(true)
-
-        // resume stdin in the parent process (node app won't quit all by itself
-        // unless an error or process.exit() happens)
         stdin.resume()
-
-        // i don't want binary, do you?
         stdin.setEncoding('utf8')
-
-        // on any data into stdin
         stdin.on('data', function (key) {
           if (key === '1') {
             market_sell(1, false)
