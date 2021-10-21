@@ -392,11 +392,11 @@ function getBalance(init = false, cb) {
     if (error) return console.error(error)
     let newBalance = balances
     
-    console.log(chalk.yellow.bold(` ______     __     __   __     ______     __   __     ______     ______        ______   ______     ______    `)
-    console.log(chalk.yellow.bold(`/\  == \   /\ \   /\ "-.\ \   /\  __ \   /\ "-.\ \   /\  ___\   /\  ___\      /\  == \ /\  == \   /\  __ \   `)
-    console.log(chalk.yellow.bold(`\ \  __<   \ \ \  \ \ \-.  \  \ \  __ \  \ \ \-.  \  \ \ \____  \ \  __\      \ \  _-/ \ \  __<   \ \ \/\ \  `)
-    console.log(chalk.yellow.bold(` \ \_____\  \ \_\  \ \_\\"\_\  \ \_\ \_\  \ \_\\"\_\  \ \_____\  \ \_____\     \ \_\    \ \_\ \_\  \ \_____\ `)
-    console.log(chalk.yellow.bold(`  \/_____/   \/_/   \/_/ \/_/   \/_/\/_/   \/_/ \/_/   \/_____/   \/_____/      \/_/     \/_/ /_/   \/_____/ `)         
+    console.log(chalk.yellow.bold(` ______     __     __   __     ______     __   __     ______     ______        ______   ______     ______    `))
+    console.log(chalk.yellow.bold(`/\  == \   /\ \   /\ "-.\ \   /\  __ \   /\ "-.\ \   /\  ___\   /\  ___\      /\  == \ /\  == \   /\  __ \   `))
+    console.log(chalk.yellow.bold(`\ \  __<   \ \ \  \ \ \-.  \  \ \  __ \  \ \ \-.  \  \ \ \____  \ \  __\      \ \  _-/ \ \  __<   \ \ \/\ \  `))
+    console.log(chalk.yellow.bold(` \ \_____\  \ \_\  \ \_\\"\_\  \ \_\ \_\  \ \_\\"\_\  \ \_____\  \ \_____\     \ \_\    \ \_\ \_\  \ \_____\ `))
+    console.log(chalk.yellow.bold(`  \/_____/   \/_/   \/_/ \/_/   \/_/\/_/   \/_/ \/_/   \/_____/   \/_____/      \/_/     \/_/ /_/   \/_____/ `))        
                 
     if (init) {
       if (newBalance[TRADE_IN]) {
