@@ -509,12 +509,17 @@ function start() {
         }
 
         tickPriceHttp()
-
+        console.log("")
         tickPriceWS()
-
+        console.log("")
+        
         console.log(
-          chalk.magenta(
-            '\nNOW, TYPE\n1 - SELL ALL\n2 - SELL HALF\n3 - SELL QUARTER\n4 - SELL 10%\n5 - BUY ALL\n6 - BUY HALF\n7 - BUY QUARTER\no - Show Browser Trading Link\n0 - Toggle Manual(no take profits or stop losses)\n(Enter not needed)'
+          chalk.bgWhite(
+            '\nHOT, KEY OPTION\n1')
+          )
+        console.log(
+          chalk.magenta.bold(
+            ' - SELL ALL\n2 - SELL HALF\n3 - SELL QUARTER\n4 - SELL 10%\n5 - BUY ALL\n6 - BUY HALF\n7 - BUY QUARTER\no - Show Browser Trading Link\n0 - Toggle Manual(no take profits or stop losses)\n(Enter Disabled)'
           )
         )
 
