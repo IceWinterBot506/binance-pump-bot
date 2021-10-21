@@ -627,9 +627,7 @@ function start() {
             }
           }
           if (key === 'o') {
-            ChromeLauncher.launch({
-              startingUrl: `https://www.binance.com/cn/trade/${TRADE_OUT}_${TRADE_IN}?layout=pro`,
-            })
+            console.log(chalk.magentaBright('https://www.binance.com/cn/trade/${TRADE_OUT}_${TRADE_IN}?layout=pro'))
           }
           // ctrl-c EXIT
           if (key === '\u0003') {
