@@ -392,7 +392,7 @@ function getBalance(init = false, cb) {
     if (error) return console.error(error)
     let newBalance = balances
     
-    console.log(chalk.yellow.bold(`
+    console.log(chalk.yellow.bold("
 BBBBBBBBBBBBBBBBB     iiii                                                                                                   PPPPPPPPPPPPPPPPP                                        
 B::::::::::::::::B   i::::i                                                                                                  P::::::::::::::::P                                       
 B::::::BBBBBB:::::B   iiii                                                                                                   P::::::PPPPPP:::::P                                      
@@ -409,7 +409,7 @@ BB:::::BBBBBB::::::Bi::::::i n::::n    n::::na::::a    a:::::a  n::::n    n::::n
 B:::::::::::::::::B i::::::i n::::n    n::::na:::::aaaa::::::a  n::::n    n::::n c:::::::::::::::::c e::::::::eeeeeeee       P::::::::P           r:::::r            o:::::::::::::::o
 B::::::::::::::::B  i::::::i n::::n    n::::n a::::::::::aa:::a n::::n    n::::n  cc:::::::::::::::c  ee:::::::::::::e       P::::::::P           r:::::r             oo:::::::::::oo 
 BBBBBBBBBBBBBBBBB   iiiiiiii nnnnnn    nnnnnn  aaaaaaaaaa  aaaa nnnnnn    nnnnnn    cccccccccccccccc    eeeeeeeeeeeeee       PPPPPPPPPP           rrrrrrr               ooooooooooo   
- `)
+")
     
     if (init) {
       if (newBalance[TRADE_IN]) {
