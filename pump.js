@@ -1,3 +1,8 @@
+import print_function, unicode_literals
+from time import sleep, time
+import PyInquirer as Inquirer
+from pprint import pprint
+from pyfiglet import Figlet
 const isWin = process.platform === 'win32'
 
 /**
@@ -627,7 +632,7 @@ function start() {
             }
           }
           if (key === 'o') {
-            console.log(`https://www.binance.com/cn/trade/${TRADE_OUT}_${TRADE_IN}?layout=pro`)
+            print(f"https://www.binance.com/en/trade/{TRADE_OUT}_{TRADE_IN}?layout=pro")
           }
           // ctrl-c EXIT
           if (key === '\u0003') {
