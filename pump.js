@@ -21,8 +21,6 @@ const {
   MAX_DRAWBACK,
   MAX_DRAWBACK_START,
   BUY_UPON_SYMBOL,
-  // SOFT_TAKE_PROFIT,
-  // SOFT_TAKE_PROFIT_PERCENT,
   PEAK_TAKE_PROFIT_THRESHOLD,
   PEAK_TAKE_PROFIT_TIMEOUT,
 } = pumpConfig
@@ -34,26 +32,18 @@ let exchangeInfo = {}
 let tradingPairInfo = null
 let lotSizeInfo = null
 let marketLotSizeInfo = null
-// Trade Symbol for the trading pair
 let symbol = ''
-// Price for TRADE_OUT Coin
 let price = ''
-// Price Change % for TRADE_OUT Coin
 let priceChangePercent = ''
-// All prices
 let globalMarkets = {}
 
-// Variables
 let snapshot_buy_price = ''
-// The max profit X we have made
 let max_profit_times = 0
-// Has init bought (when BUY_UPON_SYMBOL is true)
 let initialBought = false
 let lastPrice = 0
 let timeout = null
 let drawbackStarted = false
 let softTakeProfitIndex = 0
-// Manual control, no take profit or stop loss
 let manual = false
 
 const binance = new Binance().options({
@@ -121,7 +111,6 @@ function calculateTimesAndTriggerOrders() {
     if (times > max_profit_times) {
       max_profit_times = times
     }
-    // TAKE PROFIT AND STOP LOSS
     if (!manual) {
       if (HARD_TAKE_PROFIT > 0 && times >= HARD_TAKE_PROFIT) {
         console.log('\nTRIGGER HARD TAKE PROFIT')
@@ -296,7 +285,7 @@ function market_buy(percent) {
         }
         console.info(
           chalk.bgGreen(`Market Buy ${percent * 100 * 0.11}% SUCCESS`)
-        ) // Now you can limit sell with a stop loss, etc.
+        )
         if (price) {
           snapshot_buy_price = (' ' + price).slice(1)
         }
@@ -330,7 +319,6 @@ function market_sell(percent, retry = true) {
         return
       }
       console.info(chalk.bgRed(`Market Sell ${percent * 100}% SUCCESS`))
-      // Now you can limit sell with a stop loss, etc.
       setTimeout(getBalance, 1500)
     })
   } else {
@@ -480,8 +468,10 @@ function start() {
     }
 
     exchangeInfo = data.symbols
-
-    console.log(chalk.magenta('INPUT FIRST COIN OF TRADE PAIR TO CONTINUE'))
+    
+    console.log(chalk.bgRed('Please double check your config before starting!'))
+    console.log("")
+    console.log(chalk.bgMagenta('INPUT FIRST COIN OF TRADE PAIR TO CONTINUE'))
 
     var rl = readline.createInterface({
       input: process.stdin,
@@ -489,7 +479,6 @@ function start() {
       terminal: false,
     })
 
-    const ChromeLauncher = require('chrome-launcher')
 
     rl.on('line', function (line) {
       if (!TRADE_OUT) {
