@@ -1,8 +1,3 @@
-import print_function, unicode_literals
-from time import sleep, time
-import PyInquirer as Inquirer
-from pprint import pprint
-from pyfiglet import Figlet
 const isWin = process.platform === 'win32'
 
 /**
@@ -523,7 +518,8 @@ function getBalance(init = false, cb) {
     // balance[TRADE_OUT] = { available: 100, onOrder: 0 }
   })
 }
-
+Binance_Web = "https://www.binance.com/en/trade/"
+Binance_Pro = "?layout=pro"
 function start() {
   //minQty = minimum order quantity
   //minNotional = minimum order value (price * quantity)
@@ -549,7 +545,7 @@ function start() {
       if (!TRADE_OUT) {
         TRADE_OUT = line.toUpperCase()
         symbol = `${TRADE_OUT}${TRADE_IN}`
-
+        symbolv2 = `${TRADE_OUT}_${TRADE_IN}`
         tradingPairInfo = exchangeInfo.filter(
           (item) => item.symbol == symbol
         )[0]
@@ -632,7 +628,7 @@ function start() {
             }
           }
           if (key === 'o') {
-            print(f"https://www.binance.com/en/trade/{TRADE_OUT}_{TRADE_IN}?layout=pro")
+            console.log(`${Binance_Web}${symbolv2}${Binance_Pro}`)
           }
           // ctrl-c EXIT
           if (key === '\u0003') {
