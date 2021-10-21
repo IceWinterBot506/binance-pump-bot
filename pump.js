@@ -469,9 +469,9 @@ function start() {
 
     exchangeInfo = data.symbols
     
-    console.log(chalk.red.bold('PLEASE DOUBLE CHECK YOUR CONFIG BEFORE STARTING!'))
+    console.log(chalk.bgRed('PLEASE DOUBLE CHECK YOUR CONFIG BEFORE STARTING!'))
     console.log("")
-    console.log(chalk.magenta.underline('INPUT FIRST COIN OF TRADE PAIR TO CONTINUE'))
+    console.log(chalk.magenta.bold('INPUT FIRST COIN OF TRADE PAIR TO CONTINUE'))
 
     var rl = readline.createInterface({
       input: process.stdin,
