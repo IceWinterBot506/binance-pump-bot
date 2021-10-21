@@ -1,6 +1,5 @@
 const isWin = process.platform === 'win32'
 
-
 const chalk = require('chalk')
 const readline = require('readline')
 const Binance = require('node-binance-api')
@@ -515,14 +514,14 @@ function start() {
         
         console.log(
           chalk.bgWhite(
-            '\nHOT, KEY OPTION\n1')
+            '\nHOT, KEY OPTION')
           )
         console.log(
           chalk.magenta.bold(
-            ' - SELL ALL\n2 - SELL HALF\n3 - SELL QUARTER\n4 - SELL 10%\n5 - BUY ALL\n6 - BUY HALF\n7 - BUY QUARTER\no - Show Browser Trading Link\n0 - Toggle Manual(no take profits or stop losses)\n(Enter Disabled)'
+            '\n1 - SELL ALL\n2 - SELL HALF\n3 - SELL QUARTER\n4 - SELL 10%\n5 - BUY ALL\n6 - BUY HALF\n7 - BUY QUARTER\no - Show Browser Trading Link\n0 - Toggle Manual(no take profits or stop losses)\n(Enter Disabled)'
           )
         )
-
+        
         rl.close()
 
         var stdin = process.stdin
