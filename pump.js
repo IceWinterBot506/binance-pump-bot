@@ -467,11 +467,8 @@ function start() {
     }
 
     exchangeInfo = data.symbols
-    console.log(chalk.yellow.bold("__________.__                                    __________                "))
-    console.log(chalk.yellow.bold("\______   \__| ____ _____    ____   ____  ____   \______   \_______  ____  "))
-    console.log(chalk.yellow.bold(" |    |  _/  |/    \\__  \  /    \_/ ___\/ __ \   |     ___/\_  __ \/  _ \ "))
-    console.log(chalk.yellow.bold(" |    |   \  |   |  \/ __ \|   |  \  \__\  ___/   |    |     |  | \(  <_> )"))
-    console.log(chalk.yellow.bold(" |______  /__|___|  (____  /___|  /\___  >___  >  |____|     |__|   \____/ "))
+    console.log(chalk.yellow.inverse('BINANCE PRO'))
+    console.log("")
     console.log(chalk.bgRed('PLEASE DOUBLE CHECK YOUR CONFIG BEFORE STARTING!'))
     console.log("")
     console.log(chalk.magenta.bold('INPUT FIRST COIN OF TRADE PAIR TO CONTINUE'))
