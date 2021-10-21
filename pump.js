@@ -6,6 +6,7 @@ const Binance = require('node-binance-api')
 const config = require('./config.js')
 const pumpConfig = require('./pump-config.js')
 const utils = require('./utils.js')
+var figlet = require('figlet')
 
 const { API_KEY, API_SECRET, HTTP_INTERVAL } = config
 
@@ -50,7 +51,7 @@ const binance = new Binance().options({
   APIKEY: API_KEY,
   APISECRET: API_SECRET,
   useServerTime: true,
-  recvWindow: 5000, // Set a higher recvWindow to increase response timeout
+  recvWindow: 5000,
   // verbose: true, // Add extra output when subscribing to WebSockets, etc
   log: (log) => {
     // console.log(log) // You can create your own logger here, or disable console output
@@ -391,7 +392,9 @@ function getBalance(init = false, cb) {
   binance.balance((error, balances) => {
     if (error) return console.error(error)
     let newBalance = balances
-
+    
+    figlet('BinancePro')
+    
     if (init) {
       if (newBalance[TRADE_IN]) {
         console.log(
