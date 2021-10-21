@@ -467,11 +467,11 @@ function start() {
     }
 
     exchangeInfo = data.symbols
-    console.log(chalk.yellow.bold(` ______     __     __   __     ______     __   __     ______     ______        ______   ______     ______    `))
-    console.log(chalk.yellow.bold(`/\  == \   /\ \   /\ "-.\ \   /\  __ \   /\ "-.\ \   /\  ___\   /\  ___\      /\  == \ /\  == \   /\  __ \   `))
-    console.log(chalk.yellow.bold(`\ \  __<   \ \ \  \ \ \-.  \  \ \  __ \  \ \ \-.  \  \ \ \____  \ \  __\      \ \  _-/ \ \  __<   \ \ \/\ \  `))
-    console.log(chalk.yellow.bold(` \ \_____\  \ \_\  \ \_\\"\_\  \ \_\ \_\  \ \_\\"\_\  \ \_____\  \ \_____\     \ \_\    \ \_\ \_\  \ \_____\ `))
-    console.log(chalk.yellow.bold(`  \/_____/   \/_/   \/_/ \/_/   \/_/\/_/   \/_/ \/_/   \/_____/   \/_____/      \/_/     \/_/ /_/   \/_____/ `))
+    console.log(chalk.yellow.bold(" ______     __     __   __     ______     __   __     ______     ______        ______   ______     ______    "))
+    console.log(chalk.yellow.bold("/\  == \   /\ \   /\ "-.\ \   /\  __ \   /\ "-.\ \   /\  ___\   /\  ___\      /\  == \ /\  == \   /\  __ \   "))
+    console.log(chalk.yellow.bold("\ \  __<   \ \ \  \ \ \-.  \  \ \  __ \  \ \ \-.  \  \ \ \____  \ \  __\      \ \  _-/ \ \  __<   \ \ \/\ \  "))
+    console.log(chalk.yellow.bold(" \ \_____\  \ \_\  \ \_\\"\_\  \ \_\ \_\  \ \_\\"\_\  \ \_____\  \ \_____\     \ \_\    \ \_\ \_\  \ \_____\ "))
+    console.log(chalk.yellow.bold("  \/_____/   \/_/   \/_/ \/_/   \/_/\/_/   \/_/ \/_/   \/_____/   \/_____/      \/_/     \/_/ /_/   \/_____/ "))
     console.log(chalk.bgRed('PLEASE DOUBLE CHECK YOUR CONFIG BEFORE STARTING!'))
     console.log("")
     console.log(chalk.magenta.bold('INPUT FIRST COIN OF TRADE PAIR TO CONTINUE'))
