@@ -395,7 +395,7 @@ function getBalance(init = false, cb) {
     if (init) {
       if (newBalance[TRADE_IN]) {
         console.log(
-          chalk.yellow.bold.inverse(`YOU HAVE ${newBalance[TRADE_IN].available} ${TRADE_IN}`)
+          chalk.yellow.bold(`YOU HAVE ${newBalance[TRADE_IN].available} ${TRADE_IN}`)
         )
       } else {
         console.log(chalk.red(`WARNING: YOU DO NOT HAVE ANY ${TRADE_IN}`))
@@ -469,7 +469,7 @@ function start() {
 
     exchangeInfo = data.symbols
     
-    console.log(chalk.bgRed.bold('PLEASE DOUBLE CHECK YOUR CONFIG BEFORE STARTING!'))
+    console.log(chalk.red.bold('PLEASE DOUBLE CHECK YOUR CONFIG BEFORE STARTING!'))
     console.log("")
     console.log(chalk.magenta.underline('INPUT FIRST COIN OF TRADE PAIR TO CONTINUE'))
 
