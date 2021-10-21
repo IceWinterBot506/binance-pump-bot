@@ -392,25 +392,12 @@ function getBalance(init = false, cb) {
     if (error) return console.error(error)
     let newBalance = balances
     
-    console.log(chalk.yellow.bold("
-BBBBBBBBBBBBBBBBB     iiii                                                                                                   PPPPPPPPPPPPPPPPP                                        
-B::::::::::::::::B   i::::i                                                                                                  P::::::::::::::::P                                       
-B::::::BBBBBB:::::B   iiii                                                                                                   P::::::PPPPPP:::::P                                      
-BB:::::B     B:::::B                                                                                                         PP:::::P     P:::::P                                     
-  B::::B     B:::::Biiiiiiinnnn  nnnnnnnn      aaaaaaaaaaaaa  nnnn  nnnnnnnn        cccccccccccccccc    eeeeeeeeeeee           P::::P     P:::::Prrrrr   rrrrrrrrr      ooooooooooo   
-  B::::B     B:::::Bi:::::in:::nn::::::::nn    a::::::::::::a n:::nn::::::::nn    cc:::::::::::::::c  ee::::::::::::ee         P::::P     P:::::Pr::::rrr:::::::::r   oo:::::::::::oo 
-  B::::BBBBBB:::::B  i::::in::::::::::::::nn   aaaaaaaaa:::::an::::::::::::::nn  c:::::::::::::::::c e::::::eeeee:::::ee       P::::PPPPPP:::::P r:::::::::::::::::r o:::::::::::::::o
-  B:::::::::::::BB   i::::inn:::::::::::::::n           a::::ann:::::::::::::::nc:::::::cccccc:::::ce::::::e     e:::::e       P:::::::::::::PP  rr::::::rrrrr::::::ro:::::ooooo:::::o
-  B::::BBBBBB:::::B  i::::i  n:::::nnnn:::::n    aaaaaaa:::::a  n:::::nnnn:::::nc::::::c     ccccccce:::::::eeeee::::::e       P::::PPPPPPPPP     r:::::r     r:::::ro::::o     o::::o
-  B::::B     B:::::B i::::i  n::::n    n::::n  aa::::::::::::a  n::::n    n::::nc:::::c             e:::::::::::::::::e        P::::P             r:::::r     rrrrrrro::::o     o::::o
-  B::::B     B:::::B i::::i  n::::n    n::::n a::::aaaa::::::a  n::::n    n::::nc:::::c             e::::::eeeeeeeeeee         P::::P             r:::::r            o::::o     o::::o
-  B::::B     B:::::B i::::i  n::::n    n::::na::::a    a:::::a  n::::n    n::::nc::::::c     ccccccce:::::::e                  P::::P             r:::::r            o::::o     o::::o
-BB:::::BBBBBB::::::Bi::::::i n::::n    n::::na::::a    a:::::a  n::::n    n::::nc:::::::cccccc:::::ce::::::::e               PP::::::PP           r:::::r            o:::::ooooo:::::o
-B:::::::::::::::::B i::::::i n::::n    n::::na:::::aaaa::::::a  n::::n    n::::n c:::::::::::::::::c e::::::::eeeeeeee       P::::::::P           r:::::r            o:::::::::::::::o
-B::::::::::::::::B  i::::::i n::::n    n::::n a::::::::::aa:::a n::::n    n::::n  cc:::::::::::::::c  ee:::::::::::::e       P::::::::P           r:::::r             oo:::::::::::oo 
-BBBBBBBBBBBBBBBBB   iiiiiiii nnnnnn    nnnnnn  aaaaaaaaaa  aaaa nnnnnn    nnnnnn    cccccccccccccccc    eeeeeeeeeeeeee       PPPPPPPPPP           rrrrrrr               ooooooooooo   
-")
-    
+    console.log(chalk.yellow.bold(` ______     __     __   __     ______     __   __     ______     ______        ______   ______     ______    `)
+    console.log(chalk.yellow.bold(`/\  == \   /\ \   /\ "-.\ \   /\  __ \   /\ "-.\ \   /\  ___\   /\  ___\      /\  == \ /\  == \   /\  __ \   `)
+    console.log(chalk.yellow.bold(`\ \  __<   \ \ \  \ \ \-.  \  \ \  __ \  \ \ \-.  \  \ \ \____  \ \  __\      \ \  _-/ \ \  __<   \ \ \/\ \  `)
+    console.log(chalk.yellow.bold(` \ \_____\  \ \_\  \ \_\\"\_\  \ \_\ \_\  \ \_\\"\_\  \ \_____\  \ \_____\     \ \_\    \ \_\ \_\  \ \_____\ `)
+    console.log(chalk.yellow.bold(`  \/_____/   \/_/   \/_/ \/_/   \/_/\/_/   \/_/ \/_/   \/_____/   \/_____/      \/_/     \/_/ /_/   \/_____/ `)         
+                
     if (init) {
       if (newBalance[TRADE_IN]) {
         console.log(
