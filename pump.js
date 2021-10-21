@@ -391,7 +391,7 @@ function getBalance(init = false, cb) {
                 
     if (init) {
       if (newBalance[TRADE_IN]) { 
-    console.log(chalk.yellow.bold(`YOU HAVE ${newBalance[TRADE_IN].available} ${TRADE_IN}`))
+    console.log("")
       } else {
         console.log(chalk.red(`WARNING: YOU DO NOT HAVE ANY ${TRADE_IN}`))
         // process.exit()
@@ -472,6 +472,7 @@ function start() {
     console.log(chalk.bgRed('PLEASE DOUBLE CHECK YOUR CONFIG BEFORE STARTING!'))
     console.log(chalk.bgRed('PLEASE DOUBLE CHECK YOUR CONFIG BEFORE STARTING!'))
     console.log("")
+    console.log(chalk.yellow.bold(`YOU HAVE ${newBalance[TRADE_IN].available} ${TRADE_IN}`))
     console.log("")
     console.log("")
     console.log(chalk.magenta.bold('COIN THAT WILL PUMP:'))
