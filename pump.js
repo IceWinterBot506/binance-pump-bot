@@ -391,7 +391,15 @@ function getBalance(init = false, cb) {
                 
     if (init) {
       if (newBalance[TRADE_IN]) { 
+    console.clear()
     console.log("")
+    console.log("")
+    console.log("")
+    console.log("")
+    console.log("")
+    console.log("")
+    console.log(chalk.yellow.bold(`BINANCE CURRENT WALLET BALANCE:`))
+    console.log(chalk.green.bold(`- ${newBalance[TRADE_IN].available} ${TRADE_IN}`))
       } else {
         console.log(chalk.red(`WARNING: YOU DO NOT HAVE ANY ${TRADE_IN}`))
         // process.exit()
@@ -465,14 +473,19 @@ function start() {
     exchangeInfo = data.symbols
     console.log("")
     console.log("")
-    console.log("")
     console.log(chalk.yellow.inverse('BINANCE PRO BINANCE PRO BINANCE PRO'))
+    console.log(chalk.yellow.inverse('BINANCE PRO BINANCE PRO BINANCE PRO BINANCE PRO'))
+    console.log(chalk.yellow.inverse('BINANCE PRO BINANCE PRO BINANCE PRO BINANCE PRO BINANCE PRO'))
+    console.log(chalk.yellow.inverse('BINANCE PRO BINANCE PRO BINANCE PRO BINANCE PRO BINANCE PRO BINANCE PRO'))
+    console.log("")
+    console.log("")
+    console.log("")
+    console.log(chalk.white('STATUS:'))
+    console.log(chalk.green.inverse('- CONNECTED! (API)'))
+    console.log(chalk.green.inverse('- CONNECTED! (BOT)'))
+    console.log("")
     console.log("")
     console.log(chalk.bgRed('PLEASE DOUBLE CHECK YOUR CONFIG BEFORE STARTING!'))
-    console.log(chalk.bgRed('PLEASE DOUBLE CHECK YOUR CONFIG BEFORE STARTING!'))
-    console.log(chalk.bgRed('PLEASE DOUBLE CHECK YOUR CONFIG BEFORE STARTING!'))
-    console.log("")
-    console.log(chalk.yellow.bold(`YOU HAVE ${newBalance[TRADE_IN].available} ${TRADE_IN}`))
     console.log("")
     console.log("")
     console.log(chalk.magenta.bold('COIN THAT WILL PUMP:'))
@@ -503,8 +516,10 @@ function start() {
         } else {
           console.error(chalk.red('\nWARN: NO TRADING PAIR'))
         }
-
-        console.log(chalk.blue('\nTRADING PAIR SET: ' + symbol))
+        
+        console.log("")
+        console.log(chalk.blue.bold('\nTRADING PAIR SET: ' + symbol))
+        console.log("")
 
         if (globalMarkets && globalMarkets[symbol]) {
           price = globalMarkets[symbol].close
@@ -518,12 +533,12 @@ function start() {
         console.log("")
         
         console.log(
-          chalk.bgBlack(
-            '\nHOTKEY OPTION')
+          chalk.green.bold(
+            '\nHOTKEY AVAILABLE OPTION:')
           )
         console.log(
-          chalk.magenta.bold(
-            '\n1 - SELL ALL\n2 - SELL HALF\n3 - SELL QUARTER\n4 - SELL 10%\n5 - BUY ALL\n6 - BUY HALF\n7 - BUY QUARTER\no - Show Browser Trading Link\n0 - Toggle Manual(no take profits or stop losses)'
+          chalk.yellow.bold(
+            '\n1 - SELL ALL\n2 - SELL HALF\n3 - SELL QUARTER\n4 - SELL 10%\n5 - BUY ALL\n6 - BUY HALF\n7 - BUY QUARTER\nb - SHOW TRADING BROWSER LINK\nm - Toggle Manual(no take profits or stop losses)'
           )
         )
         console.log("")
@@ -556,18 +571,32 @@ function start() {
           if (key === '7') {
             market_buy(0.25)
           }
-          if (key === '0') {
+          if (key === 'm') {
             manual = !manual
             if (manual) {
               if (timeout) {
                 clearTimeout(timeout)
               }
-              console.log(chalk.magentaBright('MANUAL ON'))
+              console.log(chalk.cyan.bold('MANUAL TRADING: ON'))
             } else {
-              console.log(chalk.magentaBright('MANUAL OFF'))
+              console.log(chalk.cyan.bold('MANUAL TRADING: OFF'))
             }
           }
-          if (key === 'o') {
+          if (key === 'M') {
+            manual = !manual
+            if (manual) {
+              if (timeout) {
+                clearTimeout(timeout)
+              }
+              console.log(chalk.cyan.bold('MANUAL TRADING: ON'))
+            } else {
+              console.log(chalk.cyan.bold('MANUAL TRADING: OFF'))
+            }
+          }
+          if (key === 'b') {
+            console.log(`${Binance_Web}${symbolv2}${Binance_Pro}`)
+          }
+          if (key === 'B') {
             console.log(`${Binance_Web}${symbolv2}${Binance_Pro}`)
           }
           // ctrl-c EXIT
