@@ -6,6 +6,7 @@ const Binance = require('node-binance-api')
 const config = require('./config.js')
 const pumpConfig = require('./pump-config.js')
 const utils = require('./utils.js')
+require('log-timestamp')
 
 const { API_KEY, API_SECRET, HTTP_INTERVAL } = config
 
