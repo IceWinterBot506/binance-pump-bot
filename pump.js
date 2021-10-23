@@ -6,7 +6,9 @@ const Binance = require('node-binance-api')
 const config = require('./config.js')
 const pumpConfig = require('./pump-config.js')
 const utils = require('./utils.js')
-require('log-timestamp')
+
+// for timestamping debugging only
+// require('log-timestamp')
 
 const { API_KEY, API_SECRET, HTTP_INTERVAL } = config
 
@@ -224,69 +226,19 @@ function market_buy(percent) {
 
     binance.marketBuy(
       symbol,
-      getCorrectQuantity(fullQuantity * 0.6),
+      getCorrectQuantity(fullQuantity * 1),
       (error, response) => {
         if (error) {
           console.log(chalk.red('BUY FAILED'))
           return
         }
         console.info(
-          chalk.bgGreen(`Market Buy ${percent * 100 * 0.6}% SUCCESS`)
+          chalk.bgGreen(`Market Buy ${percent * 100 * 1}% SUCCESS`)
         )
-        // Now you can limit sell with a stop loss, etc.
         if (price) {
           snapshot_buy_price = (' ' + price).slice(1)
         }
         setTimeout(getBalance, 1500)
-      }
-    )
-    binance.marketBuy(
-      symbol,
-      getCorrectQuantity(fullQuantity * 0.11),
-      (error, response) => {
-        if (error) {
-          console.log(chalk.red('BUY FAILED'))
-          return
-        }
-        console.info(
-          chalk.bgGreen(`Market Buy ${percent * 100 * 0.11}% SUCCESS`)
-        )
-        if (price) {
-          snapshot_buy_price = (' ' + price).slice(1)
-        }
-      }
-    )
-    binance.marketBuy(
-      symbol,
-      getCorrectQuantity(fullQuantity * 0.11),
-      (error, response) => {
-        if (error) {
-          console.log(chalk.red('BUY FAILED'))
-          return
-        }
-        console.info(
-          chalk.bgGreen(`Market Buy ${percent * 100 * 0.11}% SUCCESS`)
-        ) // Now you can limit sell with a stop loss, etc.
-        if (price) {
-          snapshot_buy_price = (' ' + price).slice(1)
-        }
-      }
-    )
-    binance.marketBuy(
-      symbol,
-      getCorrectQuantity(fullQuantity * 0.11),
-      (error, response) => {
-        if (error) {
-          console.log(chalk.red('BUY FAILED'))
-          console.log("")
-          return
-        }
-        console.info(
-          chalk.bgGreen(`Market Buy ${percent * 100 * 0.11}% SUCCESS`)
-        )
-        if (price) {
-          snapshot_buy_price = (' ' + price).slice(1)
-        }
       }
     )
   } else {
@@ -516,6 +468,7 @@ function start() {
           )[0]
         } else {
           console.error(chalk.red('\nWARN: NO TRADING PAIR'))
+          process.exit()
         }
         
         console.log("")
